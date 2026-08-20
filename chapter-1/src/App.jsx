@@ -1,4 +1,3 @@
-import { Car } from "lucide-react";
 import Card from "./components/Card";
 
 
