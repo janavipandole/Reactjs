@@ -8,8 +8,10 @@ const Features = (props) => {
             <FeatureHeading />
 
             <div className="flex flex-wrap gap-10">
-                {props.featuresCardsData.map((data) => {
-                    return <FeatureCard color={data.color} icon={data.icon} heading={data.heading} description={data.description} />
+                {props.featuresCardsData.map((data, idx) => {
+                    return <div key={idx}>
+                        <FeatureCard color={data.color} icon={data.icon} heading={data.heading} description={data.description} />
+                    </div>
                 })}
             </div>
         </div>
