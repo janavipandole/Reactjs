@@ -1,8 +1,8 @@
 import FooterContainer from "./FooterContainer";
 
-const Footer = () => {
+const Footer = (props) => {
     return <>
-        <FooterContainer />
+        <FooterContainer FooterLinks={props.FooterLinks} />
     </>
 }
 

@@ -4,33 +4,13 @@ import FooterPart2 from "./FooterPart2";
 import FooterPart3 from "./FooterPart3";
 import FooterPart4 from "./FooterPart4";
 
-
-
-const FooterContainer = () => {
-    const FooterLinks = [
-        {
-            heading: "Quick Links",
-            li1: "Home",
-            li2: "Features",
-            li3: "About Us",
-            li4: "How It Works",
-            li5: "Contact",
-        },
-        {
-            heading: "Support",
-            li1: "Help Center",
-            li2: "FAQs",
-            li3: "Privacy Policy",
-            li4: "Terms & Conditions",
-            li5: "Security",
-        }
-    ];
+const FooterContainer = (props) => {
 
     return <>
         <div className="h-[45vh] flex flex-col justify-between w-full pt-5 pl-12 pr-12 pb-5 bg-[#0b1a36] text-gray-200">
             <div className="flex p-5 items-center justify-around w-full">
                 <FooterPart1 />
-                {FooterLinks.map((data) => {
+                {props.FooterLinks.map((data) => {
                     return <FooterPart2 heading={data.heading} li1={data.li1} li2={data.li2} li3={data.li3} li4={data.li4} li5={data.li5} />
                 })}
                 <FooterPart3 />

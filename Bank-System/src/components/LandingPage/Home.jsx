@@ -3,12 +3,13 @@ import Footer from "./Footer";
 import HomeCenter from "./HomeCenter";
 import Navbar from "./Navbar";
 
-const Home = () => {
+const Home = (props) => {
+
     return <>
         <Navbar />
         <HomeCenter />
-        <Features />
-        <Footer />
+        <Features featuresCardsData={props.featuresCardsData} />
+        <Footer FooterLinks={props.FooterLinks} />
     </>
 }
 

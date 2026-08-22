@@ -1,4 +1,6 @@
 import { Landmark } from "lucide-react";
+import { Link } from 'react-router-dom'
+
 
 const Navbar = () => {
     return <>
@@ -15,8 +17,8 @@ const Navbar = () => {
                 </ul>
 
                 <div className="flex items-center gap-4">
-                    <button className="cursor-pointer hover:bg-[#4646ea] hover:border-transparent hover:text-white border-[2px] border-gray-400 rounded-md px-8 py-2 font-semibold">Login</button>
-                    <button className="cursor-pointer rounded-md px-8 py-2 font-semibold text-white bg-[#4646ea]">Register</button>
+                    <Link to='/Login' className="cursor-pointer hover:bg-[#4646ea] hover:border-transparent hover:text-white border-[2px] border-gray-400 rounded-md px-8 py-2 font-semibold">Login</Link>
+                    <Link to='/Register' className="cursor-pointer rounded-md px-8 py-2 font-semibold text-white bg-[#4646ea]">Register</Link>
                 </div>
             </div>
         </div>
