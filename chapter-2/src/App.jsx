@@ -1,5 +1,4 @@
 import Hero from "./componenets/heroPage/Hero";
-import Secondpage from "./componenets/SecondPage/Secondpage";
 
 const App = () => {
   const userData = [
@@ -43,7 +42,6 @@ const App = () => {
   ];
   return <>
     <Hero user={userData} />
-    <Secondpage />
   </>
 }
 

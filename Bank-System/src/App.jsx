@@ -1,12 +1,17 @@
+import { Routes, Route } from "react-router-dom";
 import Home from "./components/LandingPage/Home";
-import { FileText, ShieldCheck, WalletCards, FileClock } from "lucide-react";
+import { FileText, ShieldLock, WalletCards, FileClock } from "lucide-react";
+import Register from "./components/RegisterPage/Register";
+import Login from "./components/LoginPage/Login";
+import Account from "./components/AccountPage/Account";
 
 
 const App = () => {
   // card Data
   const featuresCardsData = [
     {
-      icon: <ShieldCheck size={76} color="#4746ea" />,
+
+      icon: <ShieldLock size={76} color="#4746ea" />,
       color: "#e4e5fc",
       heading: "Secure Transactions",
       description: "Your transactions are protected with advanced encryption and multi-layer security."
@@ -31,26 +36,35 @@ const App = () => {
   ];
 
   // Footer data
-   const FooterLinks = [
-        {
-            heading: "Quick Links",
-            li1: "Home",
-            li2: "Features",
-            li3: "About Us",
-            li4: "How It Works",
-            li5: "Contact",
-        },
-        {
-            heading: "Support",
-            li1: "Help Center",
-            li2: "FAQs",
-            li3: "Privacy Policy",
-            li4: "Terms & Conditions",
-            li5: "Security",
-        }
-    ];
+  const FooterLinks = [
+    {
+      heading: "Quick Links",
+      li1: "Home",
+      li2: "Features",
+      li3: "About Us",
+      li4: "How It Works",
+      li5: "Contact",
+    },
+    {
+      heading: "Support",
+      li1: "Help Center",
+      li2: "FAQs",
+      li3: "Privacy Policy",
+      li4: "Terms & Conditions",
+      li5: "Security",
+    }
+  ];
   return <>
-    <Home featuresCardsData={featuresCardsData} FooterLinks={FooterLinks} />
+    <div>
+      <Routes>
+        <Route path="/" element={<Home featuresCardsData={featuresCardsData} FooterLinks={FooterLinks} />} />
+        <Route path="/register" element={<Register featuresCardsData={featuresCardsData} />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/account" element={<Account />} />
+      </Routes>
+
+    </div>
+
   </>
 }
 

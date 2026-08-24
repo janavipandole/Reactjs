@@ -1,6 +1,12 @@
-const Register = () => {
+import RegisterFooter from "./RegisterFooter";
+import RegisterMain from "./RegisterMain";
+import RegisterNavbar from "./RegisterNavbar";
+
+const Register = (props) => {
     return <>
-        Register
+        <RegisterNavbar />
+        <RegisterMain  featuresCardsData={props.featuresCardsData} />
+        <RegisterFooter />
     </>
 }
 
