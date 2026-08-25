@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom'
 const RegisterRight = () => {
 
     const [isChecked, setIsChecked] = useState(false);
+    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('')
 
     const handleCheckboxChange = (event) => {
         setIsChecked(event.target.checked);
@@ -12,8 +15,14 @@ const RegisterRight = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        console.log("Hello");
+        console.log(name)
+        console.log(email)
+        console.log(password)
 
+
+        setPassword('')
+        setEmail('');
+        setName('');
     }
     return <>
         <div className="h-[100%] pt-10 w-1/2 flex flex-col gap-10">
@@ -23,13 +32,20 @@ const RegisterRight = () => {
                 <p className="font-lighter text-xl">Sign up to get started with LedgerBank</p>
             </div>
 
-            <form autocomplete="off" className="flex flex-col gap-8" onClick={submitHandler} action="/Account">
+            <form className="flex flex-col gap-8" onSubmit={(e) => {
+                submitHandler(e)
+            }} action="/Account">
 
                 <div>
                     <label id="name" className="font-bold">Full Name</label>
                     <div className="flex w-full items-center border px-4 py-2 rounded-md gap-5">
                         <User size={20} />
                         <input
+                            value={name}
+                            onChange={(e) => {
+                                setName(e.target.value)
+                            }
+                            }
                             className="outline-none"
                             placeholder="Enter your full name"
                             required
@@ -43,6 +59,10 @@ const RegisterRight = () => {
                     <div className="flex w-full items-center border px-4 py-2 rounded-md gap-5">
                         <Mail size={20} />
                         <input
+                            value={email}
+                            onChange={(e) => {
+                                setEmail(e.target.value)
+                            }}
                             className="outline-none"
                             placeholder="Enter your email address"
                             required
@@ -56,6 +76,10 @@ const RegisterRight = () => {
                     <div className="flex w-full items-center border px-4 py-2 rounded-md gap-5">
                         <Lock size={20} />
                         <input
+                            value={password}
+                            onChange={(e) => {
+                                setPassword(e.target.value)
+                            }}
                             className="outline-none"
                             placeholder="Create a password"
                             required

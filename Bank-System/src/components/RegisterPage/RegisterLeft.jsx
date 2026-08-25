@@ -2,7 +2,7 @@ import RegisterCard from "./RegisterCard";
 
 const RegisterLeft = (props) => {
     return <>
-        <div className="h-[100%] w-[45%] p-5 flex flex-col items-center justify-around  bg-[#e4e5fc]">
+        <div className="h-[100%] w-[45%] p-5 flex flex-col items-center rounded-[40px] justify-around  bg-[#e4e5fc]">
             <div className="flex flex-col gap-5">
                 <div>
                     <h1 className="font-bold  text-5xl">Welcom to</h1>
